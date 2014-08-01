@@ -2,7 +2,8 @@
 # 100 Prisoners, 100 lines of code
 # Author: Benjamin Tovar
 # Date: August 1, 2014
-# personal website: http://tata-box-blog.blogspot.com/
+#
+# post: http://tata-box-blog.blogspot.com/2014/08/update-100-prisoners-100-lines-of-code.html
 #
 # Based on the post: http://www.r-bloggers.com/100-prisoners-100-lines-of-code/ 
 # ***********************************
@@ -49,7 +50,7 @@ p1 <- ggplot(data.frame(model=rep("random.model",iters),
 		geom_histogram(stat="bin",binwidth=1,
 					  fill="red",colour="red",alpha=0.1) + 
 		labs(title="RANDOM MODEL: Number of prisoners that succeeded the test",
-			x="Number of prisoners",
+			x="Success event",
 			y="Frequency") 
 
 # plot the distribution of the model
@@ -59,7 +60,7 @@ p2 <- ggplot(data.frame(model=rep("model",iters),
 		geom_histogram(stat="bin",binwidth=1,
 					  fill="lightblue",colour="blue",alpha=0.3) + 
 		labs(title="MODEL: Number of prisoners that succeeded the test",
-			x="Number of prisoners",
+			x="Success event",
 			y="Frequency") 
 # merge the plots
 grid.arrange(p1, p2)
@@ -73,7 +74,7 @@ ggplot(data.frame(model=c(rep("model",iters),rep("random.model",iters)),
 	aes(x=values) +
 	geom_density(aes(fill=as.factor(model),colour=as.factor(model)),alpha=0.3) + 
 	labs(title="Density plot of number of prisoners that succeeded retrieving their number",
-		x="Number of prisoners",
+		x="Success event",
 		y="Density") 
 
 # **********************
@@ -88,7 +89,7 @@ ggplot(data.frame(model=c(rep("model",iters),rep("random.model",iters)),
 						colour=as.factor(model)),alpha=0.3) +
 	geom_freqpoly(binwidth=1,aes(fill=as.factor(model),colour=as.factor(model))) + 
 	labs(title="Histograms of number of prisoners that succeeded retrieving their number",
-		x="Number of prisoners",
+		x="Success event",
 		y="Frequency") 
 
 # **********************
@@ -105,7 +106,7 @@ ggplot(dat) +
 	geom_jitter(colour="darkgreen",alpha=0.15) +
 		labs(title="Boxplot of the models",
 			x="Model",
-			y="Value") 
+			y="Success event") 
 
 
 ###################
@@ -167,7 +168,7 @@ run.random.model <- function(n.prisoners=100,n.boxes=100,iters=1000) {
 			path = c(prisoner)
 			tries = 1
 			# Look first in the box that matches your own number
-			inBox = boxes[prisoner]
+			inBox = sample(boxes,1)	
 			while(tries < 50) { 			
 				path = c(path, inBox) 			 			
 				if(inBox == prisoner) { 				
