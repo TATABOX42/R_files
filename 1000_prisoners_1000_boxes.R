@@ -2,6 +2,7 @@
 # 100 Prisoners, 100 lines of code
 # Author: Benjamin Tovar
 # Date: August 1, 2014
+# personal website: http://tata-box-blog.blogspot.com/
 #
 # Based on the post: http://www.r-bloggers.com/100-prisoners-100-lines-of-code/ 
 # ***********************************
