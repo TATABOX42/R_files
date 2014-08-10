@@ -3,7 +3,7 @@
 # Author: Benjamin Tovar
 # Date: August 10, 2014
 #
-# original post: http://tata-box-blog.blogspot.com/2014/08/update-100-prisoners-100-lines-of-code.html
+# original post: http://tata-box-blog.blogspot.com/2014/08/to-cooperate-of-defect-besides-of.html
 #
 # ***********************************
 
